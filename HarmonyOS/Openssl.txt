@@ -1,0 +1,19 @@
+echo $OHOS_SDK
+/Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin
+ls /Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin/native/llvm/bin/aarch64-linux-ohos-clang   
+/Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin/native/llvm/bin/aarch64-linux-ohos-clang
+mkdir build
+
+source /Users/jiangbinbin/test/ijkplayer-harmony/tpc_c_cplusplus/lycium/script/envset.sh
+setarm32ENV  
+../Configure \     
+    --prefix=$(pwd)/hostbuild/openssl/$ARCH \
+    --openssldir=$(pwd)/hostbuild/openssl/$ARCH/ssl \
+    linux-generic32 \
+    no-shared \
+    no-afalgeng \
+    no-tests \
+    no-ui-console
+ > `pwd`/build.log 2>&1
+make build_libs -j8 >> `pwd`/make.log 2>&1
+make install >> `pwd`/install.log 2>&1
