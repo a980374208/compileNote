@@ -5,6 +5,31 @@ ls /Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin/native/llvm/bin/aar
 mkdir build
 source /Users/jiangbinbin/test/ijkplayer-harmony/tpc_c_cplusplus/lycium/script/envset.sh
 cd build 
+
+
+setarm64ENV
+OPENSSL_PREFIX=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/openssl
+../configure --enable-neon --enable-asm --enable-network \
+    --disable-vulkan --enable-cross-compile --disable-x86asm --enable-protocols \
+    --enable-static --enable-shared --disable-doc --disable-htmlpages --prefix=`pwd`/hostbuild_arm64 --target-os=linux --arch=aarch64 \
+    --cc=${CC} --ld=${CC} --strip=${STRIP} --host-cc="${CC}" --host-ld="${CC}" --host-os=linux \
+    --host-ldflags=${ldflags} --sysroot=${OHOS_SDK}/native/sysroot > build.log 2>&1
+make -j8 >> ${PWD}/build_make.log 2>&1
+make install >> ${PWD}/build_install.log 2>&1
+
+
+setarm32ENV
+OPENSSL_PREFIX=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/openssl
+../configure --enable-neon --enable-asm --enable-network \
+    --disable-vulkan --enable-cross-compile --disable-x86asm --enable-protocols \
+    --enable-static --enable-shared --disable-doc --disable-htmlpages --prefix=`pwd`/hostbuild_arm32 --target-os=linux --arch=arm \
+    --cc=${CC} --ld=${CC} --strip=${STRIP} --host-cc="${CC}" --host-ld="${CC}" --host-os=linux \
+    --host-ldflags=${ldflags} --sysroot=${OHOS_SDK}/native/sysroot > build.log 2>&1
+make -j8 >> ${PWD}/build_make.log 2>&1
+make install >> ${PWD}/build_install.log 2>&1
+
+
+//setx86_64ENV
 ../configure --enable-static --enable-shared --disable-doc --disable-htmlpages \
             --target-os=darwin --disable-optimizations --prefix=`pwd`/hostbuild > ${PWD}/build_host.log 2>&1
 make -j8 >> ${PWD}/build_make.log 2>&1
