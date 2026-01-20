@@ -8,12 +8,22 @@ cd build
 
 
 setarm64ENV
-OPENSSL_PREFIX=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/openssl
+#仅编译ffmpeg
 ../configure --enable-neon --enable-asm --enable-network \
     --disable-vulkan --enable-cross-compile --disable-x86asm --enable-protocols \
     --enable-static --enable-shared --enable-pic --disable-doc --disable-htmlpages --prefix=`pwd`/hostbuild_arm64 --target-os=linux --arch=aarch64 \
     --cc=${CC} --ld=${CC} --strip=${STRIP} --host-cc="${CC}" --host-ld="${CC}" --host-os=linux \
     --host-ldflags=${ldflags} --sysroot=${OHOS_SDK}/native/sysroot > build.log 2>&1
+#编译openssl
+../configure --enable-neon --enable-asm --enable-network --enable-openssl \
+    --disable-vulkan --enable-cross-compile --disable-x86asm --enable-protocols \
+    --enable-static --enable-shared --enable-pic --disable-doc --disable-htmlpages \
+    --prefix=`pwd`/hostbuild_arm64 --target-os=linux --arch=aarch64 \
+    --cc=${CC} --ld=${CC} --strip=${STRIP} --host-cc="${CC}" --host-ld="${CC}" \
+    --host-os=linux --host-ldflags=${ldflags} --sysroot=${OHOS_SDK}/native/sysroot \
+    --extra-cflags="-I${OPENSSL_PREFIX}/include" \
+    --extra-ldflags="-L${OPENSSL_PREFIX}/lib" \
+    --pkg-config-flags="--static" > build.log 2>&1
 make -j8 >> ${PWD}/build_make.log 2>&1
 make install >> ${PWD}/build_install.log 2>&1
 
