@@ -6,14 +6,33 @@ mkdir build
 
 source /Users/jiangbinbin/test/ijkplayer-harmony/tpc_c_cplusplus/lycium/script/envset.sh
 setarm32ENV  
+
 ../Configure \     
-    --prefix=$(pwd)/hostbuild/openssl/$ARCH \
-    --openssldir=$(pwd)/hostbuild/openssl/$ARCH/ssl \
+    --prefix=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/arm64-v8a \
+    linux-aarch64 \
+    no-shared \
+    no-afalgeng \
+    no-tests \
+    no-ui-console \
+ > `pwd`/build.log 2>&1
+
+ ../Configure \     
+    --prefix=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/armeabi-v7a \
     linux-generic32 \
     no-shared \
     no-afalgeng \
     no-tests \
-    no-ui-console
+    no-ui-console \
  > `pwd`/build.log 2>&1
+
+  ../Configure \     
+    --prefix=/Users/jiangbinbin/test/openssl-openssl-3.6.0/build/hostbuild/x86_64 \
+    linux-x86_64 \
+    no-shared \
+    no-afalgeng \
+    no-tests \
+    no-ui-console \
+ > `pwd`/build.log 2>&1
+
 make build_libs -j8 >> `pwd`/make.log 2>&1
 make install >> `pwd`/install.log 2>&1
