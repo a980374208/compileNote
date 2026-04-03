@@ -3,7 +3,21 @@ echo $OHOS_SDK
 ls /Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin/native/llvm/bin/aarch64-linux-ohos-clang   
 /Users/jiangbinbin/.ohoh-sdk/sdk/packages/ohos-sdk/darwin/native/llvm/bin/aarch64-linux-ohos-clang
 mkdir build
-source /Users/jiangbinbin/test/ijkplayer-harmony/tpc_c_cplusplus/lycium/script/envset.sh
+    source /Users/jiangbinbin/test/ijkplayer-harmony/tpc_c_cplusplus/lycium/script/envset.sh
+#or
+    export AS=${OHOS_SDK}/native/llvm/bin/llvm-as
+    export CC=${OHOS_SDK}/native/llvm/bin/aarch64-linux-ohos-clang
+    export CXX=${OHOS_SDK}/native/llvm/bin/aarch64-linux-ohos-clang++
+    export LD=${OHOS_SDK}/native/llvm/bin/ld.lld
+    export STRIP=${OHOS_SDK}/native/llvm/bin/llvm-strip
+    export RANLIB=${OHOS_SDK}/native/llvm/bin/llvm-ranlib
+    export OBJDUMP=${OHOS_SDK}/native/llvm/bin/llvm-objdump
+    export OBJCOPY=${OHOS_SDK}/native/llvm/bin/llvm-objcopy
+    export NM=${OHOS_SDK}/native/llvm/bin/llvm-nm
+    export AR=${OHOS_SDK}/native/llvm/bin/llvm-ar
+    export CFLAGS="-DOHOS_NDK -fPIC -D__MUSL__=1"
+    export CXXFLAGS="-DOHOS_NDK -fPIC -D__MUSL__=1"
+    export LDFLAGS=""
 cd build 
 
 
