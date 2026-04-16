@@ -1,0 +1,17 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>icons/app_icon.png</file>
+        <file>icons/microphone.png</file>
+        <file>icons/microphone_mute.png</file>
+        <file>icons/camera.png</file>
+        <file>icons/camera_off.png</file>
+        <file>icons/screen_share.png</file>
+        <file>icons/screen_share_stop.png</file>
+        <file>icons/leave.png</file>
+        <file>icons/chat.png</file>
+        <file>icons/participants.png</file>
+        <file>icons/settings.png</file>
+        <file>styles/main.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,707 @@
+/* QMeet Main Stylesheet */
+
+/* ============================================================================ */
+/* Global Styles                                                              */
+/* ============================================================================ */
+
+QWidget {
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Main Window */
+QMainWindow {
+    background-color: #f5f5f5;
+}
+
+/* ============================================================================ */
+/* Buttons                                                                    */
+/* ============================================================================ */
+
+/* Primary Button */
+QPushButton {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 80px;
+    min-height: 32px;
+}
+
+QPushButton:hover {
+    background-color: #106ebe;
+}
+
+QPushButton:pressed {
+    background-color: #005a9e;
+}
+
+QPushButton:disabled {
+    background-color: #d1d1d1;
+    color: #999999;
+}
+
+/* Secondary Button */
+QPushButton[secondary="true"] {
+    background-color: white;
+    color: #333333;
+    border: 1px solid #d1d1d1;
+}
+
+QPushButton[secondary="true"]:hover {
+    background-color: #f0f0f0;
+}
+
+/* Danger Button (Leave Meeting) */
+QPushButton[danger="true"] {
+    background-color: #d13438;
+}
+
+QPushButton[danger="true"]:hover {
+    background-color: #b22b2e;
+}
+
+/* Control Button (Circle) */
+QPushButton[control="true"] {
+    border-radius: 24px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+/* ============================================================================ */
+/* Input Widgets                                                              */
+/* ============================================================================ */
+
+/* Line Edit */
+QLineEdit {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    selection-background-color: #0078d4;
+    selection-color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #0078d4;
+}
+
+QLineEdit:hover {
+    border: 1px solid #c7c7c7;
+}
+
+/* Text Edit */
+QTextEdit {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+QTextEdit:focus {
+    border: 1px solid #0078d4;
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 8px 12px;
+    min-height: 32px;
+}
+
+QComboBox:focus {
+    border: 1px solid #0078d4;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/arrow_down.png);
+    width: 12px;
+    height: 12px;
+}
+
+/* ============================================================================ */
+/* Scroll Bar                                                                 */
+/* ============================================================================ */
+
+QScrollBar:vertical {
+    background-color: #f0f0f0;
+    width: 8px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #c7c7c7;
+    min-height: 32px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #a0a0a0;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* ============================================================================ */
+/* List View and List Widget                                                  */
+/* ============================================================================ */
+
+QListWidget {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    outline: none;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+QListWidget::item:selected {
+    background-color: #0078d4;
+    color: white;
+}
+
+QListWidget::item:hover {
+    background-color: #f0f0f0;
+}
+
+QListView {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+}
+
+QListView::item {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+QListView::item:selected {
+    background-color: #0078d4;
+    color: white;
+}
+
+QListView::item:hover {
+    background-color: #f0f0f0;
+}
+
+/* ============================================================================ */
+/* Menu                                                                       */
+/* ============================================================================ */
+
+QMenu {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QMenu::item {
+    padding: 8px 24px;
+    border-radius: 4px;
+}
+
+QMenu::item:selected {
+    background-color: #0078d4;
+    color: white;
+}
+
+/* ============================================================================ */
+/* Labels                                                                    */
+/* ============================================================================ */
+
+QLabel {
+    color: #333333;
+}
+
+QLabel[heading="true"] {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QLabel[title="true"] {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+QLabel[subtle="true"] {
+    color: #666666;
+}
+
+/* Message Bubble */
+QLabel[message="true"] {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+QLabel[messageSelf="true"] {
+    background-color: #0078d4;
+    color: white;
+}
+
+/* Status Indicator */
+QLabel[online="true"] {
+    color: #107c10;
+}
+
+QLabel[offline="true"] {
+    color: #d13438;
+}
+
+/* Loading Spinner */
+QLabel[loading="true"] {
+    color: #0078d4;
+}
+
+/* ============================================================================ */
+/* Tooltip                                                                    */
+/* ============================================================================ */
+
+QToolTip {
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* ============================================================================ */
+/* MainWindow Specific Styles                                                */
+/* ============================================================================ */
+
+MainWindow {
+    background-color: #f5f5f5;
+}
+
+MainWindow > QWidget {
+    background-color: #f5f5f5;
+}
+
+/* MainWindow Sidebar */
+#mainSidebar {
+    background-color: white;
+    border-right: 1px solid #e0e0e0;
+    color: #000000;
+}
+
+#mainSidebar QLabel {
+    color: #000000;
+}
+
+#mainSidebar QPushButton {
+    color: #000000;
+    background: transparent;
+    border: none;
+    padding: 12px 16px;
+    text-align: left;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#mainSidebar QPushButton:hover {
+    background-color: #f0f0f0;
+}
+
+/* Avatar Label */
+#avatarLabel {
+    background-color: #0078d4;
+    border-radius: 32px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Welcome Label */
+#welcomeLabel {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Join Label */
+#joinLabel {
+    font-size: 14px;
+}
+
+/* Meeting Code Edit */
+QLineEdit#meetingCodeEdit {
+    padding: 0 16px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    min-height: 44px;
+}
+
+QLineEdit#meetingCodeEdit:focus {
+    border: 2px solid #0078d4;
+}
+
+/* Quick Join Button */
+QPushButton#quickJoinBtn {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    min-height: 44px;
+}
+
+QPushButton#quickJoinBtn:hover {
+    background-color: #106ebe;
+}
+
+/* Meeting List Label */
+#meetingListLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* ============================================================================ */
+/* MeetingRoomWindow Specific Styles                                         */
+/* ============================================================================ */
+
+MeetingRoomWindow {
+    background-color: #1a1a1a;
+}
+
+MeetingRoomWindow > QWidget {
+    background-color: #1a1a1a;
+}
+
+MeetingRoomWindow QLabel {
+    color: white;
+}
+
+MeetingRoomWindow QPushButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+MeetingRoomWindow QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+#meetingHeader {
+    background-color: #2d2d2d;
+}
+
+/* Meeting Title Label */
+#meetingTitleLabel {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Meeting Number Label */
+#meetingNumberLabel {
+    font-size: 12px;
+    color: #999999;
+}
+
+/* Duration Label */
+#durationLabel {
+    font-size: 14px;
+}
+
+/* More Button */
+#moreBtn {
+    font-size: 20px;
+}
+
+/* Video Area */
+#videoArea {
+    background-color: #0a0a0a;
+}
+
+/* Side Panel */
+#sidePanel {
+    background-color: #2d2d2d;
+}
+
+/* ============================================================================ */
+/* ControlBar Specific Styles                                                */
+/* ============================================================================ */
+
+ControlBar {
+    background-color: #2d2d2d;
+}
+
+/* Leave Button */
+QPushButton#leaveBtn {
+    background-color: #d13438;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton#leaveBtn:hover {
+    background-color: #b22b2e;
+}
+
+/* Control Button (Microphone, Camera, etc.) */
+QPushButton#controlBtn {
+    background-color: #3d3d3d;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    padding: 0px;
+    font-size: 24px;
+    font-weight: normal;
+    min-width: 56px;
+    min-height: 56px;
+    max-width: 56px;
+    max-height: 56px;
+}
+
+QPushButton#controlBtn:hover {
+    background-color: #4d4d4d;
+}
+
+QPushButton#controlBtn:pressed {
+    background-color: #5d5d5d;
+}
+
+/* Divider */
+#divider {
+    background-color: #444444;
+}
+
+/* ============================================================================ */
+/* ChatWidget Specific Styles                                                */
+/* ============================================================================ */
+
+ChatWidget {
+    background-color: #2d2d2d;
+}
+
+/* Chat Header */
+#chatHeader {
+    background-color: #3d3d3d;
+}
+
+/* Chat Title Label */
+#chatTitleLabel {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Message Scroll Area */
+#messageScrollArea {
+    border: none;
+    background-color: #2d2d2d;
+}
+
+#messageScrollArea QScrollBar:vertical {
+    background-color: #3d3d3d;
+    width: 6px;
+    border-radius: 3px;
+}
+
+#messageScrollArea QScrollBar::handle:vertical {
+    background-color: #5d5d5d;
+    min-height: 32px;
+    border-radius: 3px;
+}
+
+/* Emoji Button */
+QPushButton#emojiBtn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0px;
+    font-size: 20px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+QPushButton#emojiBtn:hover {
+    background-color: #4d4d4d;
+    border-radius: 4px;
+}
+
+/* Input Edit */
+QLineEdit#inputEdit {
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 16px;
+    padding: 0 12px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Send Button */
+QPushButton#sendBtn {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 60px;
+    min-height: 32px;
+}
+
+QPushButton#sendBtn:hover {
+    background-color: #106ebe;
+}
+
+/* Input Area */
+#chatInputArea {
+    background-color: #3d3d3d;
+}
+
+/* ============================================================================ */
+/* ParticipantWidget Specific Styles                                         */
+/* ============================================================================ */
+
+ParticipantWidget {
+    background-color: #2d2d2d;
+}
+
+/* Participant Header */
+#participantHeader {
+    background-color: #3d3d3d;
+}
+
+/* Participant Title Label */
+#participantTitleLabel {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Participant List View */
+#participantListView {
+    background-color: #2d2d2d;
+    border: none;
+    color: white;
+}
+
+#participantListView::item {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#participantListView::item:selected {
+    background-color: #0078d4;
+    color: white;
+}
+
+#participantListView::item:hover {
+    background-color: #3d3d3d;
+}
+
+/* Participant Count Label */
+#participantCountLabel {
+    color: #999999;
+    font-size: 12px;
+}
+
+/* ============================================================================ */
+/* VideoWidget Specific Styles                                               */
+/* ============================================================================ */
+
+VideoWidget {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+/* ============================================================================ */
+/* ScreenShareWidget Specific Styles                                         */
+/* ============================================================================ */
+
+ScreenShareWidget {
+    background-color: #0a0a0a;
+    border-radius: 8px;
+}
+
+/* ============================================================================ */
+/* Frame / Divider Styles                                                    */
+/* ============================================================================ */
+
+QFrame {
+    color: #d1d1d1;
+}
+
+QFrame[line="true"] {
+    background-color: #d1d1d1;
+}
+
+/* ============================================================================ */
+/* Scroll Area Styles                                                        */
+/* ============================================================================ */
+
+QScrollArea {
+    border: none;
+    background-color: white;
+}
+
+/* ============================================================================ */
+/* Color Palette Reference                                                   */
+/* ============================================================================ */
+
+/* Primary Colors */
+/* #0078d4 - Primary Blue */
+/* #106ebe - Primary Blue Hover */
+/* #005a9e - Primary Blue Pressed */
+
+/* Secondary Colors */
+/* #d13438 - Danger Red */
+/* #b22b2e - Danger Red Hover */
+/* #107c10 - Success Green */
+
+/* Neutral Colors */
+/* #f5f5f5 - Light Background */
+/* #f0f0f0 - Lighter Background */
+/* #ffffff - White */
+/* #2d2d2d - Dark Background */
+/* #1a1a1a - Darker Background */
+/* #0a0a0a - Darkest Background */
+/* #3d3d3d - Dark Hover */
+/* #4d4d4d - Dark Pressed */
+/* #5d5d5d - Dark Active */
+
+/* Text Colors */
+/* #333333 - Dark Text */
+/* #000000 - Black Text */
+/* #666666 - Subtle Text */
+/* #999999 - Light Text */
+/* #ffffff - White Text */
+
+/* Border Colors */
+/* #d1d1d1 - Light Border */
+/* #e0e0e0 - Lighter Border */
+/* #c7c7c7 - Medium Border */
+/* #444444 - Dark Border */
